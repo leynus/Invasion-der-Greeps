@@ -7,26 +7,29 @@
 <h2>Inhaltsverzeichnis</h2>
 <ul>
 <li><a href="#anf">Anfänge</a></li>
-<li><a href="#sdp">Sinn des Programms</a></li>
-<li><a href="#ads">Ablauf des Spiels</a></li>
+<li><a href="#sdp">Über das Programm</a></li>
 <li><a href="#adp">Ablauf der Programmierung</a></li>
 <ul>
-<li><a href="#era">Berührung mit der Wand</a></li>
-<li><a href="#nah">Berührung mit dem Wasser</a></li>
-<li><a href="#zas">Rote Punkte</a></li>
-<li><a href="#mus">Blaue Punkte</a></li>
-<li><a href="#for">Gelbe Punkte</a></li>
-<li><a href="#evh">Aufladen der Tomaten</a></li>
-<li><a href="#sch">Die Schlange</a></li>
+<li><a href="#era">Abprallen von den Wänden</a></li>
+<li><a href="#nah">Abprallen vom Ozean</a></li>
+<li><a href="#zas">Rote Farbkleckse</a></li>
+<li><a href="#mus">Weitere Farbkleckse</a></li>
+<li><a href="#evh">Anhalten an Tomatensträuchern</a></li>
+</ul>
+<li><a href="gre">Greep.class</a></li>
 <li><a href="pfz">PLäne für die Zukunft</a></li>
 </ul>
+
 <h2 style="color:green;" id="anf">
 Anfänge
 </h2>
+
 <p>Unsere eigentliche Idee war es, mit einem RaspberryPi zu arbeiten. In den ersten Stunden probierten wir dies aus und installierten ein neues Betriebssystem auf einem dieser Computer. Da wir uns diese Arbeit allerdings anders vorgestellt hatten, hörten wir recht schnell mit diesem Projekt auf und ließen uns eine neue Idee einfallen. Unser Ziel war (und ist) es ein Doppelkopfspiel mit Greenfoot zu programmieren. Dafür müssten wir uns aber erstmal mit dem Programm und Programmierung allgemein auseinandersetzen. Wir begannen mit den Greenfoot-Stride Lernaktivitäten. Später haben wir auf Grundlage dieser, eigene Ideen in die Welt gebracht, woraus nach einer Zeit ein Spiel entstanden ist. In unserem neuesten Projekt wanden wir uns den "Greeps"zu. Diese Aliens landen mit einem Raumschiff, um Tomaten zu sammeln.</p>
+
 <h2 style="color:darkorchid;" id="sdp">
 Sinn des Programms
 </h2>
+
 <p>Bei dem Greeps-Szenario handelt es sich um einen älteren Programmierwettbewerb. Das Ziel des Wettbewerbes ist es, so viele Tomaten wie möglich in einer gewissen Zeit zum Raumschiff zu befördern. Zu Beginn des Programms landet das Raumschiff auf der Map und es treten dutzende Alien (sogenannte "Greeps") aus. Deren Aufgabe ist es Tomaten aufzunehmen und zum Schiff zu transportieren. Um einem Greep eine Tomate aufzuladen wird die Hilfe von einem anderen Greep benötigt. Es gibt insgesamt drei Maps, die von der Landschaft her verschieden sind. Am Ende werden die jeweiligen Punktzahlen zu einer Gesamtpunkzahl addiert.<br>
 Am Anfang sind die Greeps völlig orientierungslos. Sinn dieses Programmierwettbewerbes ist es, die Greep.class so zu programmieren, dass die Actor miteinander kommunizieren können und in den verschiedensten Situationen die richtigen Befehle für ihr Handeln erhalten.<br>
 Es gibt folgende Regeln in diesem Programmierwettbewerb:</p>
@@ -44,11 +47,12 @@ Es gibt folgende Regeln in diesem Programmierwettbewerb:</p>
 <h2 style="color:indianred;" id="adp">
 Ablauf der Programmierung
 </h2>
+
 <h3 style="color:darkturquoise;" id="era">
 Abprallen von den Wänden
 </h3>
 
-<p>Wenn die Greep.class auf den Rand der World trifft, soll sie sich in einem Winkel drehen und sich danach geradeaus weiter bewegen. Dies war unser erster Schritt in diesem Projekt. Hierzu haben wie den Code <mark>“if(isatEdge()) {turn(); }”</mark> verwendet.</p>
+<p>Wenn die <a href="#gre">Greep.class</a> auf den Rand der World trifft, soll sie sich in einem Winkel drehen und sich danach geradeaus weiter bewegen. Dies war unser erster Schritt in diesem Projekt. Hierzu haben wie den Code <mark>“if(isatEdge()) {turn(); }”</mark> verwendet.</p>
 
 <p>Um den bestmöglichen Winkel zu erhalten, haben wir später eine Messreihe durchgeführt. Dabei haben wir für alle 10° (von 10° bis 180°) jeweils fünf Durchläufe durchgeführt und dokumentiert. Für jeden Winkel haben wir den Mittelwert berechnet. Da es nur fünf Durchgänge waren und der Zufall im Greeps-Szenario auch eine große Auswirkung auf das Ergebnis hat, ist der Winkel mit dem höchsten Mittelwert nicht zwangsläufig der beste. Jedoch kann man sagen, dass dieser Winkel eine gute Grundlage für eine hohe Punktzahl ist.
 </p>
@@ -59,66 +63,66 @@ Abprallen von den Wänden
 Abprallen vom Ozean
 </h3>
 
-<p>Nachdem die Greep.class jetzt von der Grenze der World abprallt, soll er sich auch drehen und wegbewegen, wenn er auf den Ozean trifft. Dies haben wir mit dem Programmabschnitt <mark>“if(atWater()) { turn(); }”</mark> durchgeführt.</p>
+<p>Nachdem die <a href="#gre">Greep.class</a> jetzt von der Grenze der World abprallt, soll er sich auch drehen und wegbewegen, wenn er auf den Ozean trifft. Dies haben wir mit dem Programmabschnitt <mark>“if(atWater()) { turn(); }”</mark> durchgeführt.</p>
 
 <p>Im weiteren Verlauf unserer Arbeit haben wir bemerkt, dass der Ausfallswinkel bei Greeps, die mit einer Tomate beladen sind anders sein sollte, als der Winkel der Greeps, die “unbeladen” nach Tomaten suchen. Um erneut einen Winkel zu benutzen, bei dem das Ergebnis möglichst hoch ist, erstellten wir weitere Testreihen (wie bei “Abprallen von den Wänden”).<br>
-Für die unbeladene Greep.class erhielten wir folgende Ergebnisse für den Abprallwinkel vom Wasser:</p>
+Für die unbeladene <a href="#gre">Greep.class</a> erhielten wir folgende Ergebnisse für den Abprallwinkel vom Wasser:</p>
 
 <p>Wir entschieden uns für einen Ausfallswinkel von 150°. Hierbei handelt es sich wieder um keinen perfekten Wert, jedoch einem guten Wert (aufgrund von einer nicht allzu umfangreichen Testreihe).</p>
 
-<p>Auch für die Greeps, die eine Tomate tragen, führten wir einige Versuche durch und erlangten die maximale Ausbeute bei etwa (EINFÜGEN)°. Wir bemerkten schnell, dass die beladene Greep.class trotz gutem Winkel lange braucht, um am Ozean vorbeizukommen. Wir bekamen die Idee, dass die Greep.class auf ihrem Rückweg zur Ship.class bei Kontakt mit dem Ozean zunächst einige Schritte in eine andere Richtung gehen und sich danach erst neu ausrichten. Um diese Idee durchzusetzen benutzten wir das Gedächtnis der Greep.class. In der Creature-Klasse ist ein Zähler integriert, der sich mithilfe von den Befehlen <mark>“getMemory”</mark> und <mark>“setMemory”</mark> kontrollieren lässt.</p>
+<p>Auch für die Greeps, die eine Tomate tragen, führten wir einige Versuche durch und erlangten die maximale Ausbeute bei etwa (EINFÜGEN)°. Wir bemerkten schnell, dass die beladene <a href="#gre">Greep.class</a> trotz gutem Winkel lange braucht, um am Ozean vorbeizukommen. Wir bekamen die Idee, dass die <a href="#gre">Greep.class</a> auf ihrem Rückweg zur Ship.class bei Kontakt mit dem Ozean zunächst einige Schritte in eine andere Richtung gehen und sich danach erst neu ausrichten. Um diese Idee durchzusetzen benutzten wir das Gedächtnis der <a href="#gre">Greep.class</a>. In der Creature-Klasse ist ein Zähler integriert, der sich mithilfe von den Befehlen <mark>“getMemory”</mark> und <mark>“setMemory”</mark> kontrollieren lässt.</p>
 
 <ul>
-<li>Wenn die Greep.class eine Tomato.class trägt (mit Tomate beladen ist),</li>
+<li>Wenn die <a href="#gre">Greep.class</a> eine Tomato.class trägt (mit Tomate beladen ist),</li>
 <ul>
-<li>wenn die Greep.class die Ship.class berührt,</li>
+<li>wenn die <a href="#gre">Greep.class</a> die Ship.class berührt,</li>
 <ul>
 <li>wird der Zähler gleich Null gesetzt.</li>
 </ul>
-<li>wenn die Greep.class die Ship.class nicht berührt,</li>
+<li>wenn die <a href="#gre">Greep.class</a> die Ship.class nicht berührt,</li>
 <ul>
-<li>dreht sich die Greep.class um 45°,</li>
+<li>dreht sich die <a href="#gre">Greep.class</a> um 45°,</li>
 <li>bewegt sich vorwärts,</li>
 <li>und der Zähler wird auf 35 gesetzt.</li>
 </ul>
 <li>wenn der Zähler größer als 30 ist,</li>
 <ul>
-<li>bewegt sich die Greep.class vorwärts,</li>
+<li>bewegt sich die <a href="#gre">Greep.class</a> vorwärts,</li>
 <li>und der Zähler zählt pro Schleife (Wiederholung) einen runter.</li>
 </ul>
-<li>wenn die Greep.class das Wasser nicht berührt und sich der Zähler unter dem Wert 31 befindet,</li>
+<li>wenn die <a href="#gre">Greep.class</a> das Wasser nicht berührt und sich der Zähler unter dem Wert 31 befindet,</li>
 <ul>
-<li>bewegt sich die Greep.class vorwärts,</li>
-<li>richtet sich die Greep.class zum Schiff aus.</li>
+<li>bewegt sich die <a href="#gre">Greep.class</a> vorwärts,</li>
+<li>richtet sich die <a href="#gre">Greep.class</a> zum Schiff aus.</li>
 </ul>
 </ul>
 </ul>
 
-<p>Durch diese Methode gelangt sie Greep.class, welche mit einer Tomate beladen ist, schneller zurück zur Schip.class, sodass insgesamt in der gleichen Zeit mehr Tomaten gesammelt werden können.</p>
+<p>Wir erstellten eine eigene Methode (<mark>backup()</mark>)durch welche die <a href="#gre">Greep.class</a>, welche mit einer Tomate beladen ist, schneller zurück zur Schip.class gelangt, sodass insgesamt in der gleichen Zeit mehr Tomaten gesammelt werden können.</p>
 
 <h3 style="color:darkturquoise;" id="zas">
 Rote Farbkleckse
 </h3>
 
-<p>Eine Schwierigkeit des Greep-Szenarios ist es, die Greeps untereinander Informationen (z.B. Lage der Tomaten) austauschen zu lassen. In der Creature.class ist der Befehl <mark>“spit”</mark> definiert. Mit diesem Befehl kann die Greep.class in bestimmten Situationen Farbkleckse hinterlassen. Mit dem Befehl <mark>“seePaint”</mark> können dann andere Actor der Greep.class gewisse Aktionen ausfüllen, wenn sie diese Farbkleckse sehen. In diesem Projekt können die Greeps in drei verschiedenen Farben (rot, orange, lila) Farbkleckse auslegen.
+<p>Eine Schwierigkeit des Greep-Szenarios ist es, die Greeps untereinander Informationen (z.B. Lage der Tomaten) austauschen zu lassen. In der Creature.class ist der Befehl <mark>“spit”</mark> definiert. Mit diesem Befehl kann die <a href="#gre">Greep.class</a> in bestimmten Situationen Farbkleckse hinterlassen. Mit dem Befehl <mark>“seePaint”</mark> können dann andere Actor der <a href="#gre">Greep.class</a> gewisse Aktionen ausfüllen, wenn sie diese Farbkleckse sehen. In diesem Projekt können die Greeps in drei verschiedenen Farben (rot, orange, lila) Farbkleckse auslegen.
 </p>
 
-<p>Unsere Idee war es, dass die Greep.class, wenn sie mit einer TomatoPile.class beladen ist, auf ihrem Rückweg zur Ship.class rote Farbkleckse legt. Der Weg zu mehreren Actors der TomatoPile.class (Tomatenstrauch) ist somit rot markiert. Um diese Idee durchzusetzen, benutzten wir folgenden Befehl:</p>
+<p>Unsere Idee war es, dass die <a href="#gre">Greep.class</a>, wenn sie mit einer TomatoPile.class beladen ist, auf ihrem Rückweg zur Ship.class rote Farbkleckse legt. Der Weg zu mehreren Actors der TomatoPile.class (Tomatenstrauch) ist somit rot markiert. Um diese Idee durchzusetzen, benutzten wir folgenden Befehl:</p>
 
-<p>Wenn die Greep.class eine TomatoPile.class trägt, hinterlässt sie auf ihrem Weg rote Farbkleckse.</p>
+<p>Wenn die <a href="#gre">Greep.class</a> eine TomatoPile.class trägt, hinterlässt sie auf ihrem Weg rote Farbkleckse.</p>
 
 <p>Wenn die anderen Actoren der Greep.class diese roten Farbkleckse sehen, sollen sie ihnen folgen und in die Richtung der Objekte der TomatoPile.class (Tomatenstäucher) gehen. Es gibt keinen Befehl, der der Greep.class befiehlt der Farbspur zu folgen. Jedoch kann sich ein Greep immer zur Ship.class ausrichten.<br>
-Objekte der Greep.class, die eine TomatoPile.class tragen, versuchen immer auf direktem Weg (geradlinig) zurück zum Schiff zu gelangen. Das bedeutet, dass die rote Farbspur oft größtenteils gerade verläuft (Ausnahme in Map 3).<br>
-Das Sichtfeld eines einzelnen Actors der Greep.class ist sehr klein. Das bedeutet, dass sich ein Objekt, welches einen Farbklecks sieht, sehr nahe an diesem Farbklecks ist (Es berührt ihn fast schon).<br>
+Objekte der <a href="#gre">Greep.class</a>, die eine TomatoPile.class tragen, versuchen immer auf direktem Weg (geradlinig) zurück zum Schiff zu gelangen. Das bedeutet, dass die rote Farbspur oft größtenteils gerade verläuft (Ausnahme in Map 3).<br>
+Das Sichtfeld eines einzelnen Actors der <a href="#gre">Greep.class</a> ist sehr klein. Das bedeutet, dass sich ein Objekt, welches einen Farbklecks sieht, sehr nahe an diesem Farbklecks ist (Es berührt ihn fast schon).<br>
 Wir befiehlten dem Greep beim Erkennen der Farbkleckse sich zur Ship.class zu drehen und sich danach um 180° zu drehen (umzudrehen). Da der Actor sich zu diesem Zeitpunkt sehr nahe an der Farbspur befindet und diese oft sehr lange geradlinig verläuft, bewegt er sich oft parallel zur Farbspur in Richtung der Objekte der TomatoPile.class (Tomatensträucher).
-Zur Wahrnehmung und Auswertung der roten Farbkleckse befiehlten wir der Greep.clss Folgendes:</p>
+Zur Wahrnehmung und Auswertung der roten Farbkleckse befiehlten wir der <a href="#gre">Greep.class</a> Folgendes:</p>
 
 <ul>
-<li>Wenn der Actor der Greep.class kein Objekt der TomatoPile.class trägt,</li>
+<li>Wenn der Actor der <a href="#gre">Greep.class</a> kein Objekt der TomatoPile.class trägt,</li>
 <ul>
 <li>wenn er rote Farbkleckse sieht und keinen Actor der TomatoPile.class berührt,</li>
 <ul>
-<li>richtet sich der Actor der Greep.class zur Ship.class aus,</li>
+<li>richtet sich der Actor der <a href="#gre">Greep.class</a> zur Ship.class aus,</li>
 <li>dreht sich um 180°,</li>
 <li>und bewegt sich vorwärts.</li>
 </ul>
@@ -129,14 +133,14 @@ Zur Wahrnehmung und Auswertung der roten Farbkleckse befiehlten wir der Greep.cl
 Weitere Farbkleckse
 </h3>
 
-<p>Wir versuchten mithilfe von weiteren Farbklecksen (orange und lila) den Greeps einen Informationsaustausch zu ermöglichen. Hierbei probierten wir den Actors der Greep.class die Ränder des Wassers anzuzeigen. Wir benutzten folgenden Quelltextabschnitt dazu:</p>
+<p>Wir versuchten mithilfe von weiteren Farbklecksen (orange und lila) den Greeps einen Informationsaustausch zu ermöglichen. Hierbei probierten wir den Actors der <a href="#gre">Greep.class</a> die Ränder des Wassers anzuzeigen. Wir benutzten folgenden Quelltextabschnitt dazu:</p>
 
 <p>Wenn ein Greep das Wasser berührt, legt er orangene Farbkleckse.</p>
 
 <p>Außerdem sollten Greeps, die gerade die roten Farbspur sehen und dieser folgen, dies durch lila Farbkleckse kennzeichnen.</p>
 
 <ul>
-<li>Wenn der Actor der Greep.class keine TomatoPile.class trägt,</li>
+<li>Wenn der Actor der <a href="#gre">Greep.class</a> keine TomatoPile.class trägt,</li>
 <ul>
 <li>wenn er rote Farbkleckse sieht und keinen Actor der TomatoPile.class berührt,</li>
 <ul>
@@ -148,11 +152,11 @@ Weitere Farbkleckse
 <p>Mithilfe von diesen Informationen versuchten wir den Greeps die Ränder des Wassers vorzeitig zu kennzeichnen, sodass sie sich wegdrehen können, bevor sie aufs Wasser treffen. Die Greeps sollten sich aber nur vorzeitig drehen wenn sie keine rote oder lila Farbspur sehen (Sie sind nicht in der Nähe von einer Spur, die zu einem Tomatenhaufen führt) und wenn sie selbst keine Actor der TomatoPile.class berühren. Wir probierten folgenden Programmabschnitt aus:</p>
 
 <ul>
-<li>Wenn der Actor der Greep.class keinen Actor der TomatoPile.class trägt,</li>
+<li>Wenn der Actor der <a href="#gre">Greep.class</a> keinen Actor der TomatoPile.class trägt,</li>
 <ul>
 <li>wenn er orange Farbkleckse sieht, keine roten und blauen Farbspuren sieht und kein Objekt der TomatoPile.class berührt,</li>
 <ul>
-<li>dreht sich der Actor der Greep.class.</li>
+<li>dreht sich der Actor der <a href="#gre">Greep.class</a>.</li>
 </ul>
 </ul>
 </ul>
@@ -163,16 +167,16 @@ Weitere Farbkleckse
 Anhalten an Tomatensträuchern
 </h3>
 
-<p>Die Greeps sind so programmiert, dass sie immer zu zweit an einem Actor der TomatoPile.class sein müssen, um diesen einem Greep “aufzuladen” und ihn zur Ship.class zu befördern. Wir dachten uns also, dass es sinnvoll wäre, wenn ein Objekt der Greep.class, wenn es auf Actors der TomatoPile.class trifft anhält und auf andere Objekte der Greep.class wartet. Dazu ließen wir die Greeps zunächst bei Berührung mit Objekten der TomatoPile.class anhalten. Es gibt keinen Befehl, der einen Greep direkt dazu bringt anzuhalten. Deshalb befiehlten wir der Greep.class sich nur zu bewegen, wenn sie keinen Actor der TomatoPile.class berührt (Ausnahme, wenn der Greep eine Tomate trägt).</p>
+<p>Die Greeps sind so programmiert, dass sie immer zu zweit an einem Actor der TomatoPile.class sein müssen, um diesen einem Greep “aufzuladen” und ihn zur Ship.class zu befördern. Wir dachten uns also, dass es sinnvoll wäre, wenn ein Objekt der <a href="#gre">Greep.class</a>, wenn es auf Actors der TomatoPile.class trifft anhält und auf andere Objekte der <a href="#gre">Greep.class</a> wartet. Dazu ließen wir die Greeps zunächst bei Berührung mit Objekten der TomatoPile.class anhalten. Es gibt keinen Befehl, der einen Greep direkt dazu bringt anzuhalten. Deshalb befiehlten wir der Greep.class sich nur zu bewegen, wenn sie keinen Actor der TomatoPile.class berührt (Ausnahme, wenn der Greep eine Tomate trägt).</p>
 
 <p><mark>if(!isTouching(TomatoPile.class)) {<br>
 move(); }</mark></p>
 
-<p>Wenn ein Actor der Greep.class kein Objekt der TomatoPile.class berührt, bewegt er sich vorwärts.</p>
+<p>Wenn ein Actor der <a href="#gre">Greep.class</a> kein Objekt der TomatoPile.class berührt, bewegt er sich vorwärts.</p>
 
 <p>Daraus resultierte, dass die Greeps an den Tomatenhaufen stehen blieben. Jedoch stoppten sie am Rand der Sträucher bei Berührung des ersten Actors der TomatoPile.class. So stoppten an einem Tomatenhaufen teilweise vier Greeps an verschiedenen Ecken. An einem Strauch berührten also oft mehrere Greeps unterschiedliche Actor der TomatoPile.class, weswegen sie nicht miteinander interagieren konnten und keine Objekte zum Schiff transportieren konnten.<br>
-Um dieses Problem zu beheben, sollte der Actor der Greep.class nicht mehr am Rand des Tomatenhaufens stoppen, sondern in der Mitte. Dadurch würde er viele Objekte der TomatoPile.class gleichzeitig berühren und hätte eine gute Chance mit möglichst vielen anderen Actors der Greep.class zu interagieren.<br>
-Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der TomatoPile.class berührt noch einige Schritte geradeaus weitergehen und dann erst anhalten. Dabei benutzten wir das Gedächtnis der Greep.class (getMemory und setMemory), um der Greep.class zu sagen, wieviele Schritte sie noch gehen muss.</p>
+Um dieses Problem zu beheben, sollte der Actor der <a href="#gre">Greep.class</a> nicht mehr am Rand des Tomatenhaufens stoppen, sondern in der Mitte. Dadurch würde er viele Objekte der TomatoPile.class gleichzeitig berühren und hätte eine gute Chance mit möglichst vielen anderen Actors der Greep.class zu interagieren.<br>
+Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der TomatoPile.class berührt noch einige Schritte geradeaus weitergehen und dann erst anhalten. Dabei benutzten wir das Gedächtnis der <a href="#gre">Greep.class</a> (getMemory und setMemory), um der <a href="#gre">Greep.class</a> zu sagen, wieviele Schritte sie noch gehen muss.</p>
 
 <p><mark>if (!carryingTomato()) {<br>
 	if(isTouching(TomatoPile.class)) {<br>
@@ -183,7 +187,7 @@ Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der Tomato
       setMemory(getMemory() -1); } } }</mark></p>
 
 <ul>
-<li>Wenn ein Actor der Greep.class keine Tomate trägt,</li>
+<li>Wenn ein Actor der <a href="#gre">Greep.class</a> keine Tomate trägt,</li>
 <ul>
 <li>wenn er einen Actor der TomatoPile.class berührt,</li>
 <ul>
@@ -205,10 +209,10 @@ Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der Tomato
 <p>Diese Methode verbesserte das Problem, schuf es aber leider nicht aus der Welt. Wir variierten die Anzahl der Schritte. Leider gelang es nur denjenigen Greeps die Mitte des Strauches zu erreichen, die geradeaus auf die Mitte zugingen.</p>
 
 <p>Wir bekamen die Idee, dass die Greeps sich beim Auftreffen auf den Tomatenhaufen kreisförmig bewegen und somit möglichst viele Tomaten fast zeitgleich (kurz hintereinander) berühren.<br>
-<p>Zur Umsetzung benutzten wir erneut das Gedächtnis (Memory) der Creature.class. Wir ließen den Greep bei Berühren des Tomatenstrauches wieder einige Schritte weiter gehen. Danach befahlen wir sich um 90° zu drehen und ein paar (gleich viele wie vorher) Schritte geradeaus zu gehen. Diesen Schritt wiederholten wir dreimal. Wenn der Actor der Greep.class (an der Ausgangsposition) dann immer noch oder wieder ein Objekt der TomatoPile.class berührt wird der Vorgang wiederholt. Folgender Programmcode codiert für diesen Befehl:</p>
+<p>Zur Umsetzung benutzten wir erneut das Gedächtnis (Memory) der Creature.class. Wir ließen den Greep bei Berühren des Tomatenstrauches wieder einige Schritte weiter gehen. Danach befahlen wir sich um 90° zu drehen und ein paar (gleich viele wie vorher) Schritte geradeaus zu gehen. Diesen Schritt wiederholten wir dreimal. Wenn der Actor der <a href="#gre">Greep.class</a> (an der Ausgangsposition) dann immer noch oder wieder ein Objekt der TomatoPile.class berührt wird der Vorgang wiederholt. Für diesen Befehl erstellten wir eine eigene Methode (<mark>turnAtTomatoes</mark>). Folgender Programmcode (Methode) codiert für diesen Befehl:</p>
 
 <ul>
-<li>Wenn ein Actor der Greep.class keine Tomate trägt,</li>
+<li>Wenn ein Actor der <a href="#gre">Greep.class</a> keine Tomate trägt,</li>
 <ul>
 <li>wenn er einen Actor der TomatoPile.class berührt,</li>
 <ul>
@@ -251,13 +255,16 @@ Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der Tomato
 </ul>
 </ul>
 </ul>
-</ul>
 
 <p>Der Greep läuft also die Kanten eines Quadrates ab. Immer wenn er zurück am Ausgangspunkt ist wird erneut überprüft, ob er Actors der TomatoPile.class berührt. Ist dies der Fall läuft er ein weiteres Quadrat ab.</p>
 
 <p>Mit dieser Methode konnten dem vorherigen Problem der vielen Greeps an einem Strauch entgegenwirken. Dadurch haben wir Ergebnisse erzielt, die deutlich höher ausfielen, als mit der alten Methode.</p>
 
 <p>Mit allen Änderungen und Befehlen betrug unser maximales Ergebnis schließlich 100 Tomaten.</p>
+
+<h2 style="color:blue;" id="gre">
+Greep.class
+</h2>
 
 <h2 style="color:lime;" id="pfz">
 Pläne für die Zukunft
