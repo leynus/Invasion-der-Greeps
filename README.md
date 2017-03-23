@@ -278,7 +278,46 @@ Greep.class
 <p><img src="Quelltext_Greeps_komplett" alt="Quelltext"></p>
 
 <ul>
-<li>
+<li>Wenn der Greep eine Tomate trägt,
+<ul>
+<li>legt er eine rote Farbspur.</li>
+<li>wenn er am Schiff ist,</li>
+<ul>
+<li>lässt er die Tomate fallen,</li>
+<li>dreht sich um 180°,</li>
+<li>und setzt die Variable (Memory) gleich null.</li>
+</ul>
+<li>wenn er nicht am Schiff ist,
+<ul>
+<li>dreht er sich bei Berührung mit dem Wasser um 45°, läuft einige Schritte und dreht sich dann wieder dem Schiff zu.</li>
+</ul>
+</ul>
+<li>Wenn der Greep keine Tomate trägt,</li>
+<ul>
+<li>und Actors der TomatoPile.class berührt, läuft er solange im Quadrat, bis er keinen Actor dieser Klasse mehr berührt.</li>
+<li>wenn die Variable (Memory) ungleich eins ist,</li>
+<ul>
+<li>bewegt sich der Actor,</li>
+<li>und hält Ausschau nach Objekten der TomatoPile.class.</li>
+</ul>
+<li>wenn er rote Farbkleckse sieht und keinen Actor der TomatoPile.class berührt,</li>
+<ul>
+<li>dreht er sich zum Schiff,</li>
+<li>dreht sich um 180°</li>
+<li>legt lila Farbkleckse,</li>
+<li>und bewegt sich.</li>
+</ul>
+<li>wenn er das Wasser berührt,</li>
+<ul>
+<li>dreht sich der Actor um 150°</li>
+<li>und legt orangene Farbkleckse.</li>
+</ul>
+</ul>
+<li>Wenn der Greep den Rand der World erreicht,</li>
+<ul>
+<li>dreht er sich um 80°</li>
+</ul>
+</ul>
 
 <h2 style="color:lime;" id="pfz">
 Pläne für die Zukunft
