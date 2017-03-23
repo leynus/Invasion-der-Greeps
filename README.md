@@ -215,8 +215,8 @@ Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der Tomato
 <p>Wir bekamen die Idee, dass die Greeps sich beim Auftreffen auf den Tomatenhaufen kreisförmig bewegen und somit möglichst viele Tomaten fast zeitgleich (kurz hintereinander) berühren.<br>
 <p>Zur Umsetzung benutzten wir erneut das Gedächtnis (Memory) der Creature.class. Wir ließen den Greep bei Berühren des Tomatenstrauches wieder einige Schritte weiter gehen. Danach befahlen wir sich um 90° zu drehen und ein paar (gleich viele wie vorher) Schritte geradeaus zu gehen. Diesen Schritt wiederholten wir dreimal. Wenn der Actor der <a href="#gre">Greep.class</a> (an der Ausgangsposition) dann immer noch oder wieder ein Objekt der TomatoPile.class berührt wird der Vorgang wiederholt. Für diesen Befehl erstellten wir eine eigene Methode (<mark>turnAtTomatoes</mark>). Folgender Programmcode (Methode) codiert für diesen Befehl:</p>
 
-<p><img src="Greeps_turnAtTomatoes1" alt="turnAtTomatoes1">
-<img src="Greeps_turnAtTomatoes2" alt="turnAtTomatoes2"> </p>
+<p><img src="Greeps_turnAtTomatoes1.png" alt="turnAtTomatoes1">
+<img src="Greeps_turnAtTomatoes2.png" alt="turnAtTomatoes2"> </p>
 
 <ul>
 <li>Wenn ein Actor der <a href="#gre">Greep.class</a> keine Tomate trägt,</li>
@@ -269,16 +269,16 @@ Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der Tomato
 
 <p>Mit allen Änderungen und Befehlen betrug unser maximales Ergebnis schließlich 100 Tomaten.</p>
 
-<p><img src="Highscore_Greeps" alt="Highscore_Greeps"></p>
+<p><img src="Highscore_Greeps.png" alt="Highscore_Greeps"></p>
 
 <h2 style="color:blue;" id="gre">
 Greep.class
 </h2>
 
-<p><img src="Quelltext_Greeps_komplett" alt="Quelltext"></p>
+<p><img src="Quelltext_Greeps_komplett.png" alt="Quelltext"></p>
 
 <ul>
-<li>Wenn der Greep eine Tomate trägt,
+<li>Wenn der Greep eine Tomate trägt,</li>
 <ul>
 <li>legt er eine rote Farbspur.</li>
 <li>wenn er am Schiff ist,</li>
@@ -287,7 +287,7 @@ Greep.class
 <li>dreht sich um 180°,</li>
 <li>und setzt die Variable (Memory) gleich null.</li>
 </ul>
-<li>wenn er nicht am Schiff ist,
+<li>wenn er nicht am Schiff ist,</li>
 <ul>
 <li>dreht er sich bei Berührung mit dem Wasser um 45°, läuft einige Schritte und dreht sich dann wieder dem Schiff zu.</li>
 </ul>
