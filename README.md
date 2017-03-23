@@ -12,12 +12,12 @@
 <li><a href="#ads">Ablauf des Spiels</a></li>
 <li><a href="#adp">Ablauf der Programmierung</a></li>
 <ul>
-<li><a href="#era">Erste Actor</a></li>
-<li><a href="#nah">Nahrungskette</a></li>
-<li><a href="#zas">Zuschauer als Spieler</a></li>
-<li><a href="#mus">Musik</a></li>
-<li><a href="#for">Fortpflanzung</a></li>
-<li><a href="#evh">Einführung von Hunger</a></li>
+<li><a href="#era">Berührung mit der Wand</a></li>
+<li><a href="#nah">Berührung mit dem Wasser</a></li>
+<li><a href="#zas">Rote Punkte</a></li>
+<li><a href="#mus">Blaue Punkte</a></li>
+<li><a href="#for">Gelbe Punkte</a></li>
+<li><a href="#evh">Aufladen der Tomaten</a></li>
 <li><a href="#sch">Die Schlange</a></li>
 <li><a href="#zom">Zombiekrabben</a></li>
 <li><a href="#gao">Game Over</a></li>
@@ -69,11 +69,11 @@ Blaue Punkte
 </h3>
 <p>.</p>
 <h3 style="color:darkturquoise;" id="for">
-Das Aufladen der Tomaten
+Gelbe Punkte
 </h3>
 <p></p>
 <h3 style="color:darkturquoise;" id="evh">
-
+Das Aufladen der Tomaten
 </h3>
 <p></p>
 <h3 style="color:darkturquoise;" id="sch">
