@@ -1,4 +1,3 @@
-# Invasion-der-Greeps
 <h1 style="color:red;">Invasion der Greeps</h1>
 <p>
 <i>ein Projekt von Leif Peters und Linus Reck</i>
@@ -28,17 +27,25 @@ Anfänge
 <h2 style="color:darkorchid;" id="sdp">
 Sinn des Programms
 </h2>
-<p>Nach unserem ersten Projekt wendeten wir uns nun einer neuen Aufgabe zu. Diese besteht in der Optimierung der "Greeps". Durch später weiter erläuterte Regeln eingegrenzt, lassen sich die "Greeps" programmieren, so z.B. in welcher weise sie auf Wände reagieren.</p>
-<h2 style="color:royalblue;" id="ads">
-Ablauf des Spiels
-</h2>
-<p></p>
-<img src="aufstellung.png" alt="aufstellung">
+<p>Bei dem Greeps-Szenario handelt es sich um einen älteren Programmierwettbewerb. Das Ziel des Wettbewerbes ist es, so viele Tomaten wie möglich in einer gewissen Zeit zum Raumschiff zu befördern. Zu Beginn des Programms landet das Raumschiff auf der Map und es treten dutzende Alien (sogenannte "Greeps") aus. Deren Aufgabe ist es Tomaten aufzunehmen und zum Schiff zu transportieren. Um einem Greep eine Tomate aufzuladen wird die Hilfe von einem anderen Greep benötigt. Es gibt insgesamt drei Maps, die von der Landschaft her verschieden sind. Am Ende werden die jeweiligen Punktzahlen zu einer Gesamtpunkzahl addiert.<br>
+Am Anfang sind die Greeps völlig orientierungslos. Sinn dieses Programmierwettbewerbes ist es, die Greep.class so zu programmieren, dass die Actor miteinander kommunizieren können und in den verschiedensten Situationen die richtigen Befehle für ihr Handeln erhalten.<br>
+Es gibt folgende Regeln in diesem Programmierwettbewerb:</p>
+<ul>
+<li>Nur die Greep.class darf programmiert werden und die Greeps dürfen keine weiteren Klassen/Objekte erzeugen oder benutzen.</li>
+<li>Es dürfen keine weiteren Instanzvariablen hinzugefügt werden.</li>
+<li>Greeps dürfen nur indirekt über Farbkleckse kommunizieren.</li>
+<li>Greeps haben ein kleines Sichtfeld / eine geringe Wahrnehmung (Ausnahme ist die Methode "turnHome(), mit der sich der Greep zum Schiff ausrichten kann.</li>
+<li>Es sind nur Methoden aus der Oberklasse Creature.class und nicht aus der Greep.class erlaubt.</li>
+<li>Ein Greep kann sich pro Runde nur einmal bewegen.</li>
+</ul>
+
+<p>Weitere Informationen zu diesem Programierwettbewerb gibt es <a href="https://greenfootlernen.wikispaces.com/file/view/Greeps-Regeln.pdf">hier.</a></p>
+
 <h2 style="color:indianred;" id="adp">
 Ablauf der Programmierung
 </h2>
 <h3 style="color:darkturquoise;" id="era">
-Berührung mit der Wand
+Abprallen von den Wänden
 </h3>
 
 <p>Wenn die Greep.class auf den Rand der World trifft, soll sie sich in einem Winkel drehen und sich danach geradeaus weiter bewegen. Dies war unser erster Schritt in diesem Projekt. Hierzu haben wie den Code <mark>“if(isatEdge()) {turn(); }”</mark> verwendet.</p>
@@ -49,10 +56,10 @@ Berührung mit der Wand
 <p>Aus den Messwerten konnten wir entnehmen, dass ein Ausfallswinkel von 80° beim Eintreffen auf die Ränder der World(s) eine hohes Ergebnis verspricht.</p>
 
 <h3 style="color:darkturquoise;" id="nah">
-Berührung mit dem Wasser
+Abprallen vom Ozean
 </h3>
 
-</p>Nachdem die Greep.class jetzt von der Grenze der World abprallt, soll er sich auch drehen und wegbewegen, wenn er auf den Ozean trifft. Dies haben wir mit dem Programmabschnitt <mark>“if(atWater()) { turn(); }”</mark> durchgeführt.</p>
+<p>Nachdem die Greep.class jetzt von der Grenze der World abprallt, soll er sich auch drehen und wegbewegen, wenn er auf den Ozean trifft. Dies haben wir mit dem Programmabschnitt <mark>“if(atWater()) { turn(); }”</mark> durchgeführt.</p>
 
 <p>Im weiteren Verlauf unserer Arbeit haben wir bemerkt, dass der Ausfallswinkel bei Greeps, die mit einer Tomate beladen sind anders sein sollte, als der Winkel der Greeps, die “unbeladen” nach Tomaten suchen. Um erneut einen Winkel zu benutzen, bei dem das Ergebnis möglichst hoch ist, erstellten wir weitere Testreihen (wie bei “Abprallen von den Wänden”).<br>
 Für die unbeladene Greep.class erhielten wir folgende Ergebnisse für den Abprallwinkel vom Wasser:</p>
