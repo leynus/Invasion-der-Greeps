@@ -57,6 +57,87 @@ Abprallen von den Wänden
 <p>Um den bestmöglichen Winkel zu erhalten, haben wir später eine Messreihe durchgeführt. Dabei haben wir für alle 10° (von 10° bis 180°) jeweils fünf Durchläufe durchgeführt und dokumentiert. Für jeden Winkel haben wir den Mittelwert berechnet. Da es nur fünf Durchgänge waren und der Zufall im Greeps-Szenario auch eine große Auswirkung auf das Ergebnis hat, ist der Winkel mit dem höchsten Mittelwert nicht zwangsläufig der beste. Jedoch kann man sagen, dass dieser Winkel eine gute Grundlage für eine hohe Punktzahl ist.
 </p>
 
+<table>
+<tr>
+<th>Winkel atEdge</th>
+<th>Score (Mittelwert)</th>
+</tr>
+<tr>
+<th>10</th>
+<th>27,4</th>
+</tr>
+<tr>
+<th>20</th>
+<th>29,4</th>
+</tr>
+<tr>
+<th>30</th>
+<th>31,6</th>
+</tr>
+<tr>
+<th>40</th>
+<th>30,8</th>
+</tr>
+<tr>
+<th>50</th>
+<th>33,6</th>
+</tr>
+<tr>
+<th>60</th>
+<th>42</th>
+</tr>
+<tr>
+<th>70</th>
+<th>39,8</th>
+</tr>
+<tr>
+<th>80</th>
+<th>47,8</th>
+</tr>
+<tr>
+<th>90</th>
+<th>31</th>
+</tr>
+<tr>
+<th>100</th>
+<th>33,6</th>
+</tr>
+<tr>
+<th>110</th>
+<th>38,6</th>
+</tr>
+<tr>
+<th>120</th>
+<th>37,4</th>
+</tr>
+<tr>
+<th>130</th>
+<th>38,4</th>
+</tr>
+<tr>
+<th>140</th>
+<th>33,8</th>
+ </tr>
+<tr>
+<th>150</th>
+<th>30,8</th>
+</tr>
+<tr>
+<th>160</th>
+<th>33,4</th>
+</tr>
+<tr>
+<th>170</th>
+<th>35,6</th>
+</tr>
+<tr>
+<th>180</th>
+<th>35,6</th>
+</tr>
+</table>
+
+<p><img src="Diagramm_WinkelEdge.jpg" alt="WinkelEdge"></p>
+
 <p>Aus den Messwerten konnten wir entnehmen, dass ein Ausfallswinkel von 80° beim Eintreffen auf die Ränder der World(s) eine hohes Ergebnis verspricht.</p>
 
 <h3 style="color:darkturquoise;" id="avo">
@@ -68,9 +149,90 @@ Abprallen vom Ozean
 <p>Im weiteren Verlauf unserer Arbeit haben wir bemerkt, dass der Ausfallswinkel bei Greeps, die mit einer Tomate beladen sind anders sein sollte, als der Winkel der Greeps, die “unbeladen” nach Tomaten suchen. Um erneut einen Winkel zu benutzen, bei dem das Ergebnis möglichst hoch ist, erstellten wir weitere Testreihen (wie bei “Abprallen von den Wänden”).<br>
 Für die unbeladene <a href="#gre">Greep.class</a> erhielten wir folgende Ergebnisse für den Abprallwinkel vom Wasser:</p>
 
+<table>
+<tr>
+<th>Winkel atWater</th>
+<th>Score (Mittelwert</th>
+</tr>
+<tr>
+<th>10</th>
+<th>33,6</th>
+</tr>
+<tr>
+<th>20</th>
+<th>42</th>
+</tr>
+<tr>
+<th>30</th>
+<th>38,6</th>
+</tr>
+<tr>
+<th>40</th>
+<th>39,8</th>
+</tr>
+<tr>
+<th>50</th>
+<th>48</th>
+</tr>
+<tr>
+<th>60</th>
+<th>44,4</th>
+</tr>
+<tr>
+<th>70</th>
+<th>48,2</th>
+</tr>
+<tr>
+<th>80</th>
+<th>45,6</th>
+</tr>
+<tr>
+<th>90</th>
+<th>44,6</th>
+</tr>
+<tr>
+<th>100</th>
+<th>42,2</th>
+</tr>
+<tr>
+<th>110</th>
+<th>47</th>
+</tr>
+<tr>
+<th>120</th>
+<th>44,2</th>
+</tr>
+<tr>
+<th>130</th>
+<th>45,6</th>
+</tr>
+<tr>
+<th>140</th>
+<th>48,2</th>
+</tr>
+<tr>
+<th>150</th>
+<th>48,6</th>
+</tr>
+<tr>
+<th>160</th>
+<th>42,2</th>
+</tr>
+<tr>
+<th>170</th>
+<th>28,4</th>
+</tr>
+<tr>
+<th>180</th>
+<th>28,4</th>
+</tr>
+</table>
+
+<p><img src="Diagramm_WinkelWater.jpg" alt="WinkelWater"></p>
+
 <p>Wir entschieden uns für einen Ausfallswinkel von 150°. Hierbei handelt es sich wieder um keinen perfekten Wert, jedoch einem guten Wert (aufgrund von einer nicht allzu umfangreichen Testreihe).</p>
 
-<p>Auch für die Greeps, die eine Tomate tragen, führten wir einige Versuche durch und erlangten die maximale Ausbeute bei etwa (EINFÜGEN)°. Wir bemerkten schnell, dass die beladene <a href="#gre">Greep.class</a> trotz gutem Winkel lange braucht, um am Ozean vorbeizukommen. Wir bekamen die Idee, dass die <a href="#gre">Greep.class</a> auf ihrem Rückweg zur Ship.class bei Kontakt mit dem Ozean zunächst einige Schritte in eine andere Richtung gehen und sich danach erst neu ausrichten. Um diese Idee durchzusetzen benutzten wir das Gedächtnis der <a href="#gre">Greep.class</a>. In der Creature-Klasse ist ein Zähler integriert, der sich mithilfe von den Befehlen <mark>“getMemory”</mark> und <mark>“setMemory”</mark> kontrollieren lässt.</p>
+<p>Auch für die Greeps, die eine Tomate tragen, führten wir einige Versuche durch und erlangten die maximale Ausbeute bei etwa 50°. Wir bemerkten schnell, dass die beladene <a href="#gre">Greep.class</a> trotz gutem Winkel lange braucht, um am Ozean vorbeizukommen. Wir bekamen die Idee, dass die <a href="#gre">Greep.class</a> auf ihrem Rückweg zur Ship.class bei Kontakt mit dem Ozean zunächst einige Schritte in eine andere Richtung gehen und sich danach erst neu ausrichten. Um diese Idee durchzusetzen benutzten wir das Gedächtnis der <a href="#gre">Greep.class</a>. In der Creature-Klasse ist ein Zähler integriert, der sich mithilfe von den Befehlen <mark>“getMemory”</mark> und <mark>“setMemory”</mark> kontrollieren lässt.</p>
 
 <p><img src="Greeps_backup.png" alt="greeps_backup"></p>
 
