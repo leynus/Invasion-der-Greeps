@@ -273,6 +273,9 @@ Rote Farbkleckse
 
 <p>Unsere Idee war es, dass die <a href="#gre">Greep.class</a>, wenn sie mit einer TomatoPile.class beladen ist, auf ihrem Rückweg zur Ship.class rote Farbkleckse legt. Der Weg zu mehreren Actors der TomatoPile.class (Tomatenstrauch) ist somit rot markiert. Um diese Idee durchzusetzen, benutzten wir folgenden Befehl:</p>
 
+<p><mark> if (carryingTomato()) {<br>
+spit("red"); }</mark></p>
+
 <p>Wenn die <a href="#gre">Greep.class</a> eine TomatoPile.class trägt, hinterlässt sie auf ihrem Weg rote Farbkleckse.</p>
 
 <p>Wenn die anderen Actoren der Greep.class diese roten Farbkleckse sehen, sollen sie ihnen folgen und in die Richtung der Objekte der TomatoPile.class (Tomatenstäucher) gehen. Es gibt keinen Befehl, der der Greep.class befiehlt der Farbspur zu folgen. Jedoch kann sich ein Greep immer zur Ship.class ausrichten.<br>
@@ -301,9 +304,16 @@ Weitere Farbkleckse
 
 <p>Wir versuchten mithilfe von weiteren Farbklecksen (orange und lila) den Greeps einen Informationsaustausch zu ermöglichen. Hierbei probierten wir den Actors der <a href="#gre">Greep.class</a> die Ränder des Wassers anzuzeigen. Wir benutzten folgenden Quelltextabschnitt dazu:</p>
 
+<p><mark>        if(atWater()){<br>
+spit("orange"); }</mark></p>
+
 <p>Wenn ein Greep das Wasser berührt, legt er orangene Farbkleckse.</p>
 
 <p>Außerdem sollten Greeps, die gerade die roten Farbspur sehen und dieser folgen, dies durch lila Farbkleckse kennzeichnen.</p>
+
+<p><mark> if(!carryingTomato(); {<br>
+if(seePaint("red") && !isTouching(TomatoPile.class)) {<br>
+spit("purple");} }</mark></p>
 
 <ul>
 <li>Wenn der Actor der <a href="#gre">Greep.class</a> keine TomatoPile.class trägt,</li>
@@ -316,6 +326,10 @@ Weitere Farbkleckse
 </ul>
 
 <p>Mithilfe von diesen Informationen versuchten wir den Greeps die Ränder des Wassers vorzeitig zu kennzeichnen, sodass sie sich wegdrehen können, bevor sie aufs Wasser treffen. Die Greeps sollten sich aber nur vorzeitig drehen wenn sie keine rote oder lila Farbspur sehen (Sie sind nicht in der Nähe von einer Spur, die zu einem Tomatenhaufen führt) und wenn sie selbst keine Actor der TomatoPile.class berühren. Wir probierten folgenden Programmabschnitt aus:</p>
+
+<p><mark>if (!carryingTomato()) {<br>
+if(seePaint("orange") && !seePaint("red") && !seePaint("purple") && !isTouching(TomatoPile.class)) {<br>
+turn(); } }</mark></p>
 
 <ul>
 <li>Wenn der Actor der <a href="#gre">Greep.class</a> keinen Actor der TomatoPile.class trägt,</li>
@@ -421,8 +435,6 @@ Um dies zu erreichen, ließen wir den Actor, wenn er das erste Objekt der Tomato
 <ul>
 <li>dreht sich der Actor um 90°,</li>
 <li>und die Variable (Memorie) wird gleich null gesetzt.</li>
-</ul>
-</ul>
 </ul>
 
 <p>Der Greep läuft also die Kanten eines Quadrates ab. Immer wenn er zurück am Ausgangspunkt ist wird erneut überprüft, ob er Actors der TomatoPile.class berührt. Ist dies der Fall läuft er ein weiteres Quadrat ab.</p>
