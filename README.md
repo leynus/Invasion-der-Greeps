@@ -3,18 +3,18 @@
 <i>ein Projekt von Leif Peters und Linus Reck</i>
 </p>
 <p>Das vorliegende Programm wurde mit Hilfe "<mark>Greenfoot's</mark>" geschrieben. Beim Bearbeiten orientierten wir uns an unseren Vorkenntnissen aus den Stride-Angaben und dem Greenfoot-Buch, sowie nutzten wir nun verstärkt das Internet, so z.B. zur Inspieration.</p>
-<p> Unser <a href="https://leynus.github.io/Stundenprotokoll/">Stundenprotokoll</a>
+<p> Unser <a href="https://leynus.github.io/Stundenprotokoll_2.0/">Stundenprotokoll</a>
 <h2>Inhaltsverzeichnis</h2>
 <ul>
 <li><a href="#anf">Anfänge</a></li>
-<li><a href="#sdp">Über das Programm</a></li>
+<li><a href="#üdp">Über das Programm</a></li>
 <li><a href="#adp">Ablauf der Programmierung</a></li>
 <ul>
-<li><a href="#era">Abprallen von den Wänden</a></li>
-<li><a href="#nah">Abprallen vom Ozean</a></li>
-<li><a href="#zas">Rote Farbkleckse</a></li>
-<li><a href="#mus">Weitere Farbkleckse</a></li>
-<li><a href="#evh">Anhalten an Tomatensträuchern</a></li>
+<li><a href="#avw">Abprallen von den Wänden</a></li>
+<li><a href="#avo">Abprallen vom Ozean</a></li>
+<li><a href="#rof">Rote Farbkleckse</a></li>
+<li><a href="#wef">Weitere Farbkleckse</a></li>
+<li><a href="#anh">Anhalten an Tomatensträuchern</a></li>
 </ul>
 <li><a href="gre">Greep.class</a></li>
 <li><a href="pfz">PLäne für die Zukunft</a></li>
@@ -26,7 +26,7 @@ Anfänge
 
 <p>Unsere eigentliche Idee war es, mit einem RaspberryPi zu arbeiten. In den ersten Stunden probierten wir dies aus und installierten ein neues Betriebssystem auf einem dieser Computer. Da wir uns diese Arbeit allerdings anders vorgestellt hatten, hörten wir recht schnell mit diesem Projekt auf und ließen uns eine neue Idee einfallen. Unser Ziel war (und ist) es ein Doppelkopfspiel mit Greenfoot zu programmieren. Dafür müssten wir uns aber erstmal mit dem Programm und Programmierung allgemein auseinandersetzen. Wir begannen mit den Greenfoot-Stride Lernaktivitäten. Später haben wir auf Grundlage dieser, eigene Ideen in die Welt gebracht, woraus nach einer Zeit ein Spiel entstanden ist. In unserem neuesten Projekt wanden wir uns den "Greeps"zu. Diese Aliens landen mit einem Raumschiff, um Tomaten zu sammeln.</p>
 
-<h2 style="color:darkorchid;" id="sdp">
+<h2 style="color:darkorchid;" id="üdp">
 Über das Programm
 </h2>
 
@@ -48,7 +48,7 @@ Es gibt folgende Regeln in diesem Programmierwettbewerb:</p>
 Ablauf der Programmierung
 </h2>
 
-<h3 style="color:darkturquoise;" id="era">
+<h3 style="color:darkturquoise;" id="avw">
 Abprallen von den Wänden
 </h3>
 
@@ -59,7 +59,7 @@ Abprallen von den Wänden
 
 <p>Aus den Messwerten konnten wir entnehmen, dass ein Ausfallswinkel von 80° beim Eintreffen auf die Ränder der World(s) eine hohes Ergebnis verspricht.</p>
 
-<h3 style="color:darkturquoise;" id="nah">
+<h3 style="color:darkturquoise;" id="avo">
 Abprallen vom Ozean
 </h3>
 
@@ -102,7 +102,7 @@ Für die unbeladene <a href="#gre">Greep.class</a> erhielten wir folgende Ergebn
 
 <p>Wir erstellten eine eigene Methode (<mark>backup()</mark>)durch welche die <a href="#gre">Greep.class</a>, welche mit einer Tomate beladen ist, schneller zurück zur Schip.class gelangt, sodass insgesamt in der gleichen Zeit mehr Tomaten gesammelt werden können.</p>
 
-<h3 style="color:darkturquoise;" id="zas">
+<h3 style="color:darkturquoise;" id="rof">
 Rote Farbkleckse
 </h3>
 
@@ -133,7 +133,7 @@ Zur Wahrnehmung und Auswertung der roten Farbkleckse befiehlten wir der <a href=
 </ul>
 </ul>
 
-<h3 style="color:darkturquoise;" id="mus">
+<h3 style="color:darkturquoise;" id="wef">
 Weitere Farbkleckse
 </h3>
 
@@ -167,7 +167,7 @@ Weitere Farbkleckse
 
 <p>Hierbei probierten wir verschiedene Drehwinkel aus. Eine Folge aus diesem Befehl war, dass sich Actor, die sich von der Wand wegdrehten, erneut drehten, weil sie ihre eigene Farbspur sahen. Wir probierten einen kleinen Drehwinkel aus, wodurch dieser Effekt schwächer wurde. Letztlich fiel unser endgültiges Ergebnis mit diesem Programmabschnitt kleiner aus, als ohne ihn. Deswegen entfernten wir diesen wieder. Wir glauben noch immer, dass sich diese Idee gut umsetzen lässt und mit einem richtig umgesetzten Befehl eine höhere Punktzahl erreichen kann. Jedoch hörten wir wegen Zeitdruck auf, weiter an der Umsetzung dieser Idee zu arbeiten.</p>
 
-<h3 style="color:darkturquoise;" id="evh">
+<h3 style="color:darkturquoise;" id="anh">
 Anhalten an Tomatensträuchern
 </h3>
 
