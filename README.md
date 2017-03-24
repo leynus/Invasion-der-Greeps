@@ -1,4 +1,6 @@
 <h1 style="color:red;">Invasion der Greeps</h1>
+<img src="greep.png" alt="greep">
+<img src="greep-with-food.png" alt="greep_with_food">
 <p>
 <i>ein Projekt von Leif Peters und Linus Reck</i>
 </p>
