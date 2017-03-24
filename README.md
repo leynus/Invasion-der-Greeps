@@ -268,6 +268,8 @@ Für die unbeladene <a href="#gre">Greep.class</a> erhielten wir folgende Ergebn
 Rote Farbkleckse
 </h3>
 
+<p><img src="Greep_Paint.png" alt="Greep_Paint">
+
 <p>Eine Schwierigkeit des Greep-Szenarios ist es, die Greeps untereinander Informationen (z.B. Lage der Tomaten) austauschen zu lassen. In der Creature.class ist der Befehl <mark>“spit”</mark> definiert. Mit diesem Befehl kann die <a href="#gre">Greep.class</a> in bestimmten Situationen Farbkleckse hinterlassen. Mit dem Befehl <mark>“seePaint”</mark> können dann andere Actor der <a href="#gre">Greep.class</a> gewisse Aktionen ausfüllen, wenn sie diese Farbkleckse sehen. In diesem Projekt können die Greeps in drei verschiedenen Farben (rot, orange, lila) Farbkleckse auslegen.
 </p>
 
