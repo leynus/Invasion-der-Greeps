@@ -136,7 +136,7 @@ Abprallen von den Wänden
 </tr>
 </table>
 
-<p><img src="Diagramm_WinkelEdge.jpg" alt="WinkelEdge"></p>
+<p><img src="Diagramm_WinkelEdge.JPG" alt="WinkelEdge"></p>
 
 <p>Aus den Messwerten konnten wir entnehmen, dass ein Ausfallswinkel von 80° beim Eintreffen auf die Ränder der World(s) eine hohes Ergebnis verspricht.</p>
 
@@ -228,7 +228,7 @@ Für die unbeladene <a href="#gre">Greep.class</a> erhielten wir folgende Ergebn
 </tr>
 </table>
 
-<p><img src="Diagramm_WinkelWater.jpg" alt="WinkelWater"></p>
+<p><img src="Diagramm_WinkelWater.JPG" alt="WinkelWater"></p>
 
 <p>Wir entschieden uns für einen Ausfallswinkel von 150°. Hierbei handelt es sich wieder um keinen perfekten Wert, jedoch einem guten Wert (aufgrund von einer nicht allzu umfangreichen Testreihe).</p>
 
